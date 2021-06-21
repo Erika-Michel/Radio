@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RadioTest {
 
     @Test
-    public void shouldChangeMaxStationAndSwitchNextStation() {
+    public void shouldChangeStationsQuantityAndSwitchNextStation() {
         Radio radio = new Radio(25, 105);
 
         radio.nextStation();
@@ -19,8 +19,8 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSwitchNextStationReachMaxLimit() {
-        Radio radio = new Radio(30, 30);
+    public void shouldChangeStationsQuantityAndSwitchNextStationReachMaxLimit() {
+        Radio radio = new Radio(29, 30);
 
         radio.nextStation();
 
@@ -30,7 +30,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSwitchPrevStation() {
+    public void shouldChangeStationsQuantityAndSwitchPrevStation() {
         Radio radio = new Radio(34, 42);
 
         radio.prevStation();
@@ -41,18 +41,18 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSwitchPrevStationReachMinLimit() {
+    public void shouldChangeStationsQuantityAndSwitchPrevStationReachMinLimit() {
         Radio radio = new Radio(0, 55);
 
         radio.prevStation();
 
-        int expected = 55;
+        int expected = 54;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldChangeMaxStationAndSetCurrentStation(){
+    public void shouldChangeStationsQuantityAndSetCurrentStation() {
         Radio radio = new Radio(4, 18);
 
         radio.setCurrentStation(17);
@@ -63,7 +63,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndNotSetCurrentStationAboveMaxLimit(){
+    public void shouldChangeStationsQuantityAndNotSetCurrentStationAboveMaxLimit() {
         Radio radio = new Radio(5, 14);
 
         radio.setCurrentStation(17);
@@ -74,7 +74,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldNotSetCurrentStationBelowMinLimit(){
+    public void shouldNotSetCurrentStationBelowMinLimit() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
 
@@ -135,7 +135,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldNotSetCurrentVolumeAboveMaxLimit(){
+    public void shouldNotSetCurrentVolumeAboveMaxLimit() {
         Radio radio = new Radio();
         radio.setCurrentVolume(2);
 
@@ -147,7 +147,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldNotSetCurrentVolumeBelowMinLimit(){
+    public void shouldNotSetCurrentVolumeBelowMinLimit() {
         Radio radio = new Radio();
         radio.setCurrentVolume(5);
 
@@ -157,7 +157,4 @@ class RadioTest {
         int actual = radio.getCurrentVolume();
         assertEquals(expected, actual);
     }
-
-
 }
-
