@@ -30,7 +30,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSwitchPrevStation() {
+    public void shouldChangeStationsQuantityAndSwitchPrevStation() {
         Radio radio = new Radio(34, 42);
 
         radio.prevStation();
@@ -41,7 +41,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSwitchPrevStationReachMinLimit() {
+    public void shouldChangeStationsQuantityAndSwitchPrevStationReachMinLimit() {
         Radio radio = new Radio(0, 55);
 
         radio.prevStation();
@@ -52,7 +52,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSetCurrentStation(){
+    public void shouldChangeStationsQuantityAndSetCurrentStation(){
         Radio radio = new Radio(4, 18);
 
         radio.setCurrentStation(17);
@@ -63,7 +63,7 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndNotSetCurrentStationAboveMaxLimit(){
+    public void shouldChangeStationsQuantityAndNotSetCurrentStationAboveMaxLimit(){
         Radio radio = new Radio(5, 14);
 
         radio.setCurrentStation(17);
