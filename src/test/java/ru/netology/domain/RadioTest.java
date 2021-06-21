@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RadioTest {
 
     @Test
-    public void shouldChangeMaxStationAndSwitchNextStation() {
+    public void shouldChangeStationsQuantityAndSwitchNextStation() {
         Radio radio = new Radio(25, 105);
 
         radio.nextStation();
@@ -19,8 +19,8 @@ class RadioTest {
     }
 
     @Test
-    public void shouldChangeMaxStationAndSwitchNextStationReachMaxLimit() {
-        Radio radio = new Radio(30, 30);
+    public void shouldChangeStationsQuantityAndSwitchNextStationReachMaxLimit() {
+        Radio radio = new Radio(29, 30);
 
         radio.nextStation();
 
@@ -46,7 +46,7 @@ class RadioTest {
 
         radio.prevStation();
 
-        int expected = 55;
+        int expected = 54;
         int actual = radio.getCurrentStation();
         assertEquals(expected, actual);
     }
